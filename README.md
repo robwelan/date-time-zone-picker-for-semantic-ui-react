@@ -21,9 +21,22 @@ It uses date-fns and date-fns-timezone to work its magic. There is no moment.js 
 
 ## Dependencies
 
+- semantic-ui-react
+- semantic-ui-css
 - date-fns
 - timezone-support
 - date-fns-timezone
+
+## DevDependencies
+
+- eslint
+- prettier
+- eslint-plugin-prettier
+- eslint-plugin-import
+- eslint-plugin-jsx-a11y
+- eslint-plugin-react
+- eslint-config-airbnb
+- eslint-config-airbnb-base
 
 ## Use Yarn
 
