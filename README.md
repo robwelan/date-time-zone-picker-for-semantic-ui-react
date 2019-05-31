@@ -48,3 +48,4 @@ It uses date-fns and date-fns-timezone to work its magic. There is no moment.js 
 ### For Fun
 
 lines of code @ init: 10,421
+lines of code after dependencies added (and README updated and LICENSE added: 10,710
