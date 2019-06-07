@@ -142,7 +142,9 @@ Description: gets data from the DateTimeZonePicker. Create a handleChange functi
 For example:
 
 handleChange(data) {
-console.log(data);
+
+&nbsp;&nbsp;console.log(data);
+
 }
 
 output: { date: { year: 2019, month: 6, day: 1 }, time: { hour: 18, minute: 59, second: 0, millisecond: 0 }, zone: 'Australia/Sydney' }
