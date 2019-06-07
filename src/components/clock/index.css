@@ -1,0 +1,16 @@
+.ui.grid.clock .ui.segment {
+  width: 100%;
+  padding: 36px 4px 4px 4px;
+}
+
+div.ui.grid.clock,
+div.ui.grid.clock .ui.grid.collapsed,
+div.ui.grid.clock .ui.grid.container {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0;
+}
+
+div.ui.grid.clock .ui.segment .meridiem-dropdown {
+  text-align: center;
+}

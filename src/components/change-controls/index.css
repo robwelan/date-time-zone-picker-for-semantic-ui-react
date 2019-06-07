@@ -1,0 +1,16 @@
+.date-time-zone-picker .attached.buttons {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0.285714rem;
+  border-top-right-radius: 0.285714rem;
+}
+
+.date-time-zone-picker .attached.buttons > .ui.button {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.date-time-zone-picker .attached.buttons > .ui.button:last-child {
+  border-bottom-right-radius: 0.285714rem;
+  border-top-right-radius: 0.285714rem;
+}

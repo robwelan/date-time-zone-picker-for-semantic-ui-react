@@ -1,0 +1,123 @@
+.modals.dimmer .ui.modal.modal-date-time-zone-picker {
+  width: 320px;
+  height: 568px;
+  margin: 0;
+  padding: 4px;
+}
+
+.all-picker-content {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -webkit-align-content: stretch;
+  align-content: stretch;
+  height: 560px;
+}
+
+div.main-controls {
+  flex-shrink: 0;
+  margin-bottom: 4px !important;
+}
+
+div.main-controls .card {
+  width: 100%;
+}
+
+div.main-controls .card .content {
+  padding: 8px 4px 4px 4px;
+}
+
+div.all-sidebar-content {
+  flex-grow: 1;
+  position: relative;
+}
+
+div.all-sidebar-content > div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ui.container .picker-content {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+}
+
+div.ui.vertical.segment.ui.scale.down.bottom.thin.visible.sidebar.picker-closer {
+  padding-top: 0;
+}
+
+div.ui.container.picker-content .calendar {
+  height: 100%;
+}
+
+div.ui.container.picker-content .clock {
+  height: 100%;
+}
+
+div.ui.container.picker-content .zone {
+  height: 100%;
+}
+
+/* TODO: fix up comments */
+/*
+
+.ui.modal.date-time-zone-picker .pushable {
+  overflow: visible;
+
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.ui.modal.date-time-zone-picker .pusher {
+  flex: 1;
+}
+
+div.picker-control-buttons {
+  padding: 4px;
+}
+
+.ui.modal.content > .description,
+.ui.modal.date-time-zone-picker .ui.grid.container.main-controls {
+  width: 100%;
+  padding-top: 4px !important;
+}
+
+.ui.grid.container.main-controls .ui.card {
+  width: 100%;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.ui.grid.container.main-controls .ui.card .content {
+  width: 100%;
+  padding: 8px 4px 4px 4px;
+}
+
+.ui.modal.content > .description,
+.ui.grid.container.main-controls .ui.card .content .description {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+.ui.grid.container.main-controls .ui.card .content .description p {
+  width: 100%;
+  padding: 1px;
+  margin: 0;
+}
+
+.ui.container .picker-content {
+  display: flex;
+  height: 100%;
+  padding: 4px;
+  margin: 0 !important;
+}
+
+*/
