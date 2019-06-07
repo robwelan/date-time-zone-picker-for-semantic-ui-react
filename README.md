@@ -24,6 +24,7 @@ It uses date-fns and date-fns-timezone to work its magic. There is no moment.js 
 - semantic-ui-react
 - semantic-ui-css
 - date-fns
+- jstz
 - timezone-support
 - date-fns-timezone
 
