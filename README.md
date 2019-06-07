@@ -46,9 +46,6 @@ It uses date-fns and date-fns-timezone to work its magic. There is no moment.js 
 
 ---
 
-### Just For Fun
+### MIT License
 
-|    Qty | Description                                                                        |
-| -----: | :--------------------------------------------------------------------------------- |
-| 10,421 | lines of code @ init                                                               |
-| 10,658 | lines of code after dependancies added (includes README update and LICENSE update) |
+Copyright (c) 2019 Rob Welan
