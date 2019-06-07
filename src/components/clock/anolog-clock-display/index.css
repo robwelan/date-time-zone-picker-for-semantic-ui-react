@@ -1,4 +1,4 @@
-.grid .analog-clock-display-container {
+.ui.grid .analog-clock-display-container {
   width: 200px;
   height: 200px;
   display: flex;
