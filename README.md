@@ -118,21 +118,27 @@ Default: {}
 
 Type: Object
 
-What it should look like (you should set to current date and time):
+**Number Types**:
+year, month, day, hour, minute, second, millisecond
+
+**String Types**:
+zone
+
+What it should look like (you should set to an empty object or the time derived from your api):
 
 value = {
-date: {
-year: 2019,
-month: 6, // where January is 1
-day: 1,
-},
-time: {
-hour: 18,
-minute: 59,
-second: 0,
-millisecond: 0,
-},
-zone: 'Australia/Sydney',
+&nbsp;&nbsp;date: {
+&nbsp;&nbsp;&nbsp;&nbsp;year: 2019,
+&nbsp;&nbsp;&nbsp;&nbsp;month: 6, // where January is 1
+&nbsp;&nbsp;&nbsp;&nbsp;day: 1,
+&nbsp;&nbsp;},
+&nbsp;&nbsp;time: {
+&nbsp;&nbsp;&nbsp;&nbsp;hour: 18,
+&nbsp;&nbsp;&nbsp;&nbsp;minute: 59,
+&nbsp;&nbsp;&nbsp;&nbsp;second: 0,
+&nbsp;&nbsp;&nbsp;&nbsp;millisecond: 0,
+&nbsp;&nbsp;},
+&nbsp;&nbsp;zone: 'Australia/Sydney',
 };
 
 ### onChange
