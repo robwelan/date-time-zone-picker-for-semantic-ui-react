@@ -1,6 +1,6 @@
 {
   "name": "date-time-zone-picker-for-semantic-ui-react",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "date-fns": "^1.30.1",
