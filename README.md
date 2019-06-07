@@ -46,6 +46,68 @@ It uses date-fns and date-fns-timezone to work its magic. There is no moment.js 
 
 ---
 
+## Props
+
+Documentation is under development.
+
+### setDate
+
+Description: Show the Calendar Control so that the date can be set.
+
+Default: true
+
+Type: boolean
+
+### setMilliseconds
+
+Description: Within the Time Control allow setting of Milliseconds.
+
+Default: false
+
+Type: boolean
+
+Dependancies: setTime, setSeconds
+
+### setSeconds
+
+Description: Within the Time Control allow setting of Seconds.
+
+Default: false
+
+Type: boolean
+
+Dependancies: setTime
+
+### setTwentyFour
+
+Description: Within the Time Control, set time in twenty-four hour time or in am/pm style.
+
+Default: true
+
+Type: boolean
+
+Dependancies: setTime
+
+### setTime
+
+Description: Show the Time Control so that the time can be set.
+
+Default: false
+
+Type: boolean
+
+### setZone
+
+Description: Show the Timezone Control so that the timezone can be set.
+
+Default: false
+
+Type: boolean
+
+NOTE: the date control will still be available if setDate, setTime and setZone are all set to false.
+
+---
+
 ### MIT License
 
 Copyright (c) 2019 Rob Welan
