@@ -4,7 +4,7 @@
 
 In Progress.
 
-This is a side project and a labour of love at that. I hope to have it functional and released to NPM soon.
+This is a side project and a labour of love at that.
 
 ## About
 
