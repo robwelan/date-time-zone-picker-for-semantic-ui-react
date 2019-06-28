@@ -40,9 +40,6 @@ import {
   replaceAllCharacters,
 } from '../../utilities/functions';
 
-// Styles
-import '../../frameworks/semantic-ui-react/styles';
-
 class DateTimeZonePicker extends React.Component {
   constructor(props) {
     super(props);
