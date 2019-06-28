@@ -2,7 +2,7 @@ import {
   getAllDaysBetween,
   getISODayOfWeek,
   getLastDayOfMonth,
-} from '../../../utilities/functions';
+} from '../../utilities/functions';
 
 const getIsCurrentDay = (setDay, compareDay) => setDay === compareDay;
 

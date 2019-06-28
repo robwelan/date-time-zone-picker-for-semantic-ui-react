@@ -2,7 +2,7 @@ import {
   getDateFormat,
   getTimeFormat,
   getZoneFormat,
-} from '../../utilities/functions';
+} from '../utilities/functions';
 
 const FONT_SIZE = 14;
 const PIXEL_TO_EM_FACTOR = 3;

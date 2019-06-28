@@ -6,7 +6,7 @@ import {
   replaceAllCharacters,
   roundDownToNearestFive,
   setTimeToTimeZone,
-} from '../../utilities/functions';
+} from '../utilities/functions';
 
 const getButtonValues = (
   year,

@@ -38,7 +38,7 @@ import {
   getFormattedDateLabel,
   getFormattedTimeLabel,
   replaceAllCharacters,
-} from '../../utilities/functions';
+} from '../utilities/functions';
 
 class DateTimeZonePicker extends React.Component {
   constructor(props) {

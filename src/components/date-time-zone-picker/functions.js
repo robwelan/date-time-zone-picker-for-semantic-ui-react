@@ -6,7 +6,7 @@ import {
   getFormattedMonthNumber,
   getFormattedTimeLabel,
   getYearFromDate,
-} from '../../utilities/functions';
+} from '../utilities/functions';
 
 const setOverrideForSetDate = (setDate, setTime, setZone) => {
   if (!setDate && !setTime && !setZone) {
