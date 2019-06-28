@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 //  Semantic-UI
-import { Button } from '../../../frameworks/semantic-ui-react/scripts';
+import { Button } from 'semantic-ui-react';
 //  Components
 import ButtonContent from './button-content';
 import ListItems from './list-items';

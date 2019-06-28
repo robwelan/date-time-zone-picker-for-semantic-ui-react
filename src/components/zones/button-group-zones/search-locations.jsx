@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 // Semantic-UI
-import { Input } from '../../../frameworks/semantic-ui-react/scripts';
+import { Input } from 'semantic-ui-react';
 
 const SearchLocations = props => {
   const { doOnChangeFilter, filter } = props;

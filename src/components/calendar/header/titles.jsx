@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Grid } from '../../../frameworks/semantic-ui-react/scripts';
+import { Grid } from 'semantic-ui-react';
 import { getWeekDayOrder } from '../functions';
 
 const Titles = props => {

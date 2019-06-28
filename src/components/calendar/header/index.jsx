@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Titles } from './titles';
-import { Divider, Grid } from '../../../frameworks/semantic-ui-react/scripts';
+import { Divider, Grid } from 'semantic-ui-react';
 
 const Header = props => {
   const { firstDay } = props;

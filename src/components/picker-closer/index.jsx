@@ -8,7 +8,7 @@ import {
   Icon,
   Segment,
   Sidebar,
-} from '../../frameworks/semantic-ui-react/scripts';
+} from 'semantic-ui-react';
 import './index.css';
 
 const PickerCloser = ({

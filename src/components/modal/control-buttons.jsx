@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 //  Semantic-UI-React
-import { Button, Icon } from '../../frameworks/semantic-ui-react/scripts';
+import { Button, Icon } from 'semantic-ui-react';
 
 const ControlButtons = props => {
   const { doClearValues, doShowModal, showClearButton } = props;

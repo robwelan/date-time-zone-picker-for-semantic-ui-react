@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 // Semantic-UI
-import { Item } from '../../../frameworks/semantic-ui-react/scripts';
+import { Item } from 'semantic-ui-react';
 
 const ButtonContent = props => {
   const { title, image } = props;

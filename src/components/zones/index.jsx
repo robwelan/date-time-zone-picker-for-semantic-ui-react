@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 //  Semantic-UI-React
-import { Grid, Ref } from '../../frameworks/semantic-ui-react/scripts';
+import { Grid, Ref } from 'semantic-ui-react';
 
 //  Components
 import ButtonGroupRegions from './button-group-regions';

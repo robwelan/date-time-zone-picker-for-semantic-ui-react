@@ -5,7 +5,7 @@ import {
   Button,
   Item,
   Grid,
-} from '../../../frameworks/semantic-ui-react/scripts';
+} from 'semantic-ui-react';
 
 const SelectedZone = props => {
   const { doShowRegions, zoneTitle } = props;

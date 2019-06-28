@@ -11,7 +11,7 @@ import {
   Label,
   Modal,
   Sidebar,
-} from '../../frameworks/semantic-ui-react/scripts';
+} from 'semantic-ui-react';
 
 //  Components
 import ChangeControls from '../change-controls';

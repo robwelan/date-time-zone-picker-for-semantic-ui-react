@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Button } from '../../../frameworks/semantic-ui-react/scripts';
+import { Button } from 'semantic-ui-react';
 
 const ControlToday = props => {
   const { doChange, year, month, day } = props;

@@ -24,7 +24,7 @@ import {
   Grid,
   Icon,
   Input,
-} from '../../frameworks/semantic-ui-react/scripts';
+} from 'semantic-ui-react';
 
 //  Functions
 import { getDecrement, getIncrement, getNumericOrMinOrMax } from './functions';
