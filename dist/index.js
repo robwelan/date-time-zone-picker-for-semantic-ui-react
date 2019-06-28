@@ -41,7 +41,7 @@ var _state2 = require('./state');
 
 var _functions = require('./functions');
 
-var _functions2 = require('../../utilities/functions');
+var _functions2 = require('../utilities/functions');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

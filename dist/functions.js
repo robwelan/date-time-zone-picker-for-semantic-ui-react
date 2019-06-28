@@ -13,7 +13,7 @@ var _jstz2 = _interopRequireDefault(_jstz);
 
 var _state = require('./state');
 
-var _functions = require('../../utilities/functions');
+var _functions = require('../utilities/functions');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
