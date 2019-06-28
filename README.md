@@ -6,6 +6,10 @@ In Progress.
 
 This is a side project and a labour of love at that.
 
+## How To Include
+
+`import DateTimeZonePicker from 'date-time-zone-picker-for-semantic-ui-react'`
+
 ## About
 
 This is a date-time-zone picker specifically built for Semantic-UI-React.
@@ -48,7 +52,7 @@ It uses date-fns and date-fns-timezone to work its magic. There is no moment.js 
 
 ## Component
 
-<DateTimeZonePicker setDate, setTime, setZone value={value} onChange={this.handleChange} />
+`<DateTimeZonePicker setDate, setTime, setZone value={value} onChange={this.handleChange} />`
 
 ## Props
 

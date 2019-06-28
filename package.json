@@ -1,14 +1,12 @@
 {
   "name": "date-time-zone-picker-for-semantic-ui-react",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "private": false,
   "license": "(MIT)",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "babel": {
-    "presets": [
-      "@babel/react"
-    ]
+    "presets": [ "react", "env", "stage-2" ]
   },
   "repository": {
     "type": "git",
@@ -28,7 +26,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "publish:npm": "SET NODE_ENV=production && if exist dist rmdir /s /q dist && mkdir dist && npx babel src/components/date-time-zone-picker --out-dir dist --copy-files",
+    "publish:npm": "set NODE_ENV=production && if exist dist rmdir /s /q dist && mkdir dist && npx babel src/components/date-time-zone-picker --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -48,6 +46,10 @@
     ]
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
