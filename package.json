@@ -1,12 +1,12 @@
 {
   "name": "date-time-zone-picker-for-semantic-ui-react",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "private": false,
   "license": "(MIT)",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "babel": {
-    "presets": [ "react", "env", "stage-2" ]
+    "presets": ["@babel/react"]
   },
   "repository": {
     "type": "git",
