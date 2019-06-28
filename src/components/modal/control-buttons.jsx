@@ -4,7 +4,7 @@ import React from 'react';
 //  Semantic-UI-React
 import { Button, Icon } from 'semantic-ui-react';
 
-const ControlButtons = props => {
+const ControlButtons = (props) => {
   const { doClearValues, doShowModal, showClearButton } = props;
   const type = {
     calendar: 'calendar alternate outline',

@@ -6,7 +6,7 @@ import {
   Segment,
 } from 'semantic-ui-react';
 
-const PresentChange = props => {
+const PresentChange = (props) => {
   const { children, icon, label } = props;
 
   return (

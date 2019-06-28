@@ -3,7 +3,7 @@ import React from 'react';
 import { Titles } from './titles';
 import { Divider, Grid } from 'semantic-ui-react';
 
-const Header = props => {
+const Header = (props) => {
   const { firstDay } = props;
 
   return (

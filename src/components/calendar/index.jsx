@@ -21,7 +21,7 @@ import { getFirstDayNumber } from './functions';
 //  Style
 import './index.css';
 
-const Calendar = props => {
+const Calendar = (props) => {
   const {
     allowDate,
     doSetYear,

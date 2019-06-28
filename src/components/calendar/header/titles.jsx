@@ -3,7 +3,7 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import { getWeekDayOrder } from '../functions';
 
-const Titles = props => {
+const Titles = (props) => {
   const { firstDay } = props;
   const processDays = getWeekDayOrder(firstDay);
 

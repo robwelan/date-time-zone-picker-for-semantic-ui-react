@@ -68,7 +68,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   componentDidMount() {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setComponentDidMountState(this.props, prevState);
 
       return newState;
@@ -83,7 +83,7 @@ class DateTimeZonePicker extends React.Component {
       //  is legal. Air-BnB does not provide adequate documentation
       //  to the contrary...
       //  eslint-disable-next-line react/no-did-update-set-state
-      this.setState(prevState => {
+      this.setState((prevState) => {
         const newState = setComponentDidUpdateState(this.props, prevState);
 
         return newState;
@@ -92,7 +92,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doShowCalendar() {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setVisibleDate(prevState);
 
       return newState;
@@ -100,7 +100,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doShowClock() {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setVisibleTime(prevState);
 
       return newState;
@@ -108,7 +108,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doShowZone() {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setVisibleZone(prevState);
 
       return newState;
@@ -116,7 +116,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doCloseCloser() {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setInvisibleCloser(prevState);
 
       return newState;
@@ -124,7 +124,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doShowCloser() {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = toggleVisibleCloser(prevState);
 
       return newState;
@@ -132,7 +132,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doCloseModal() {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setInvisibleModal(prevState);
 
       return newState;
@@ -141,7 +141,7 @@ class DateTimeZonePicker extends React.Component {
 
   doClearValues() {
     const { onChange } = this.props;
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = clearAllValues(prevState);
 
       if (typeof onChange !== 'undefined') {
@@ -154,7 +154,7 @@ class DateTimeZonePicker extends React.Component {
 
   doSaveChanges() {
     const { onChange } = this.props;
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setInvisibleModalAndSave(prevState, this.props);
       const { values } = newState;
 
@@ -169,7 +169,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doShowModal() {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setVisibleModal(prevState);
 
       return newState;
@@ -177,7 +177,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doSetYear(value) {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setPickerValuesDate(prevState, 'year', value);
 
       return newState;
@@ -185,7 +185,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doSetMonth(value) {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setPickerValuesDate(prevState, 'month', value);
 
       return newState;
@@ -194,7 +194,7 @@ class DateTimeZonePicker extends React.Component {
 
   doSetDay(year, month, day) {
     return () => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         const newState = setPickerValuesDay(prevState, year, month, day);
 
         return newState;
@@ -203,7 +203,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doSetToday() {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setPickerValuesDateToday(prevState);
 
       return newState;
@@ -211,7 +211,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doSetHour(value) {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setPickerValuesTime(prevState, 'hour', value);
 
       return newState;
@@ -219,7 +219,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doSetMinute(value) {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setPickerValuesTime(prevState, 'minute', value);
 
       return newState;
@@ -227,7 +227,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doSetSecond(value) {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setPickerValuesTime(prevState, 'second', value);
 
       return newState;
@@ -235,7 +235,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doSetMeridiem(value) {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setPickerValuesTime(prevState, 'meridiem', value);
 
       return newState;
@@ -243,7 +243,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doSetMillisecond(value) {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = setPickerValuesTime(prevState, 'millisecond', value);
 
       return newState;
@@ -251,7 +251,7 @@ class DateTimeZonePicker extends React.Component {
   }
 
   doSetZone(zone) {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = {
         ...prevState,
         picker: {
@@ -284,7 +284,13 @@ class DateTimeZonePicker extends React.Component {
       picker: {
         values: {
           date: { day, month, year },
-          time: { hour, minute, second, millisecond, meridiem },
+          time: {
+            hour,
+            minute,
+            second,
+            millisecond,
+            meridiem,
+          },
           zone,
         },
         visible: {
@@ -310,7 +316,7 @@ class DateTimeZonePicker extends React.Component {
       millisecond,
       setSeconds,
       setMilliseconds,
-      setTwentyFour
+      setTwentyFour,
     );
 
     let labelZone = '';

@@ -7,7 +7,7 @@ import { Button } from 'semantic-ui-react';
 //  Style
 import './index.css';
 
-const ChangeControls = props => {
+const ChangeControls = (props) => {
   const {
     actions: { showDate, showTime, showZone },
     visible: { date, time, zone },

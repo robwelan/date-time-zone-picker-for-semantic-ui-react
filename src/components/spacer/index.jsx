@@ -4,7 +4,7 @@ import React from 'react';
 // styling
 import './index.css';
 
-const Spacer = props => {
+const Spacer = (props) => {
   const { height } = props;
 
   return <div className="spacer" style={{ height: `${height}` }} />;

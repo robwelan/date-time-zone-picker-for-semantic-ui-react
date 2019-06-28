@@ -2,16 +2,24 @@ import PropTypes from 'prop-types';
 import React from 'react';
 //  Semantic-UI-React
 import { Button } from 'semantic-ui-react';
+
 //  Utilities
 import {
   getDayOfMonthFromDate,
   getMonthFromDate,
   getYearFromDate,
 } from '../../utilities/functions';
+
 import { getDatesOfCalendarDisplay } from './functions';
 
-const DayController = props => {
-  const { setDay, year, month, day, firstDay } = props;
+const DayController = (props) => {
+  const {
+    setDay,
+    year,
+    month,
+    day,
+    firstDay,
+  } = props;
   const datesArray = getDatesOfCalendarDisplay(year, month, firstDay);
   const groupSize = 7;
   const rowsSize = datesArray.length / groupSize - 1;
@@ -26,9 +34,9 @@ const DayController = props => {
       const jsMonth = month - 1;
 
       if (
-        Number(contentYear) === year &&
-        Number(contentMonth) === jsMonth &&
-        Number(contentDay) === day
+        Number(contentYear) === year
+        && Number(contentMonth) === jsMonth
+        && Number(contentDay) === day
       ) {
         classNames.push('active');
       }

@@ -7,7 +7,7 @@ import {
   Grid,
 } from 'semantic-ui-react';
 
-const SelectedZone = props => {
+const SelectedZone = (props) => {
   const { doShowRegions, zoneTitle } = props;
 
   const buttons = zoneTitle.split('/').map((value, index) => {

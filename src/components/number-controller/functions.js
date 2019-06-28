@@ -1,8 +1,6 @@
-const getValueOrMin = (min, value) =>
-  Number.isNaN(parseInt(value, 10)) || value < min ? min : +value;
+const getValueOrMin = (min, value) => (Number.isNaN(parseInt(value, 10)) || value < min ? min : +value);
 
-const getValueOrMax = (max, value) =>
-  Number.isNaN(parseInt(value, 10)) || value > max ? max : +value;
+const getValueOrMax = (max, value) => (Number.isNaN(parseInt(value, 10)) || value > max ? max : +value);
 
 const getSantisedValue = (min, max, value) => {
   let newValue = value;

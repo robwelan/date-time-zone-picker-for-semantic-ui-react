@@ -4,6 +4,9 @@ import {
   getLastDayOfMonth,
 } from '../../utilities/functions';
 
+const MAX_DAYS = 6;
+const WEEK_DAYS_AMOUNT = 7;
+
 const getIsCurrentDay = (setDay, compareDay) => setDay === compareDay;
 
 const getBorderMonths = (year, month) => {
@@ -36,8 +39,8 @@ const getBorderMonths = (year, month) => {
 const getStartDayOfCalendarDisplay = (year, month, day) => {
   let startDay = day - getISODayOfWeek(year, month, day);
 
-  if (day - startDay > 6) {
-    startDay += 7;
+  if (day - startDay > MAX_DAYS) {
+    startDay += WEEK_DAYS_AMOUNT;
   }
 
   return startDay;
@@ -53,11 +56,10 @@ const getDatesOfCalendarDisplay = (year, month, setFirstDay) => {
   const startDayOfCalendarDisplay = getStartDayOfCalendarDisplay(
     lastMonth.year,
     lastMonth.month,
-    lastDayOfLastMonth
+    lastDayOfLastMonth,
   );
 
-  const lastDayOfCalendarDisplay =
-    6 - getISODayOfWeek(nextMonth.year, nextMonth.month, 1) + setFirstDay + 1;
+  const lastDayOfCalendarDisplay = MAX_DAYS - getISODayOfWeek(nextMonth.year, nextMonth.month, 1) + setFirstDay + 1;
 
   const arrayOfDates = getAllDaysBetween(
     lastMonth.year,
@@ -65,7 +67,7 @@ const getDatesOfCalendarDisplay = (year, month, setFirstDay) => {
     startDayOfCalendarDisplay,
     nextMonth.year,
     nextMonth.month,
-    lastDayOfCalendarDisplay
+    lastDayOfCalendarDisplay,
   );
 
   return arrayOfDates;

@@ -1,6 +1,6 @@
 import { ARRAY_OF_DAYS_BY_FIRST_LETTER as days } from './constants';
 
-const getFirstDayNumber = first => {
+const getFirstDayNumber = (first) => {
   let number = 0; // sunday
 
   if (first.toLowerCase() === 'monday') {
@@ -15,7 +15,7 @@ const toEnd = (list, from, count) => {
   return list;
 };
 
-const getWeekDayOrder = first => {
+const getWeekDayOrder = (first) => {
   let processDays = [];
 
   if (first !== 0) {

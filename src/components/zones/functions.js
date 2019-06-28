@@ -16,7 +16,7 @@ const getButtonValues = (
   minute,
   region,
   zone,
-  identifier
+  identifier,
 ) => {
   // TODO: make sure month + 1 is not necessary...
   const actualMonth = month + 1;
@@ -34,7 +34,7 @@ const getButtonValues = (
   const formattedToTimeZone = setTimeToTimeZone(
     time,
     'HH:mm a',
-    formatToTimeZoneObject
+    formatToTimeZoneObject,
   );
   // const offset = formatToTimeZone(time, 'ZZ', formatToTimeZoneObject);
   const offset = setTimeToTimeZone(time, 'ZZ', formatToTimeZoneObject);
@@ -52,11 +52,17 @@ const getButtonValues = (
 };
 
 const getZonesObject = (button = {}) => {
-  const { year, month, day, hour, minute } = button;
+  const {
+    year,
+    month,
+    day,
+    hour,
+    minute,
+  } = button;
   const roundedMinute = roundDownToNearestFive(minute);
 
   const zones = listTimeZones()
-    .filter(region => {
+    .filter((region) => {
       let invalid = false;
       const name = region.toLowerCase();
       /*
@@ -64,6 +70,7 @@ const getZonesObject = (button = {}) => {
       https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
     */
       const deprecated = [
+        'asia/qostanay', // unknown
         'cet',
         'cst6cdt',
         'eet',
@@ -83,7 +90,7 @@ const getZonesObject = (button = {}) => {
 
       return !invalid;
     })
-    .map(identifier => {
+    .map((identifier) => {
       const array = identifier.split('/');
       const region = array[0];
       const zone = replaceAllCharacters(array[array.length - 1], '_', ' ');
@@ -95,7 +102,7 @@ const getZonesObject = (button = {}) => {
         roundedMinute,
         region,
         zone,
-        identifier
+        identifier,
       );
       /*
         id needs to be in this format:
@@ -126,7 +133,7 @@ const getZonesObject = (button = {}) => {
   return zones;
 };
 
-const getRegions = zones => {
+const getRegions = (zones) => {
   const regions = zones
     .map(zone => zone.region)
     .filter(isUnique)

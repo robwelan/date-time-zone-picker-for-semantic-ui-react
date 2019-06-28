@@ -22,12 +22,12 @@ class MeridiemDropdown extends React.Component {
     this.setState({ meridiem });
   }
 
-  handleChange = (e, { value }) => {
+  handleChange(e, { value }) {
     const { doSetMeridiem } = this.props;
 
     this.setState({ meridiem: value.toLowerCase() });
     doSetMeridiem(value.toLowerCase());
-  };
+  }
 
   render() {
     const { meridiem } = this.state;

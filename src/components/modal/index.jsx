@@ -24,7 +24,7 @@ import './index.css';
 /*
   paint the main container that holds everything else
 */
-const ModalMain = props => {
+const ModalMain = (props) => {
   const {
     allowDate,
     allowTime,

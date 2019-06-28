@@ -3,7 +3,7 @@ import React from 'react';
 // Semantic-UI
 import { Input } from 'semantic-ui-react';
 
-const SearchLocations = props => {
+const SearchLocations = (props) => {
   const { doOnChangeFilter, filter } = props;
 
   return (

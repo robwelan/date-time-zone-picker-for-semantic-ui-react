@@ -3,7 +3,7 @@ import React from 'react';
 // Semantic-UI
 import { Item } from 'semantic-ui-react';
 
-const ButtonContent = props => {
+const ButtonContent = (props) => {
   const { image, offset, time, title, option, zone } = props;
 
   return (

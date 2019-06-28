@@ -4,7 +4,7 @@ import React from 'react';
 import ContainerButtonGroupZones from './container-button-group-zones';
 import SearchLocations from './search-locations';
 
-const ButtonGroupZones = props => {
+const ButtonGroupZones = (props) => {
   const {
     allZones,
     doChooseZone,

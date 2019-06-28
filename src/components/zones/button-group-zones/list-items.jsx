@@ -6,7 +6,7 @@ import { Button } from 'semantic-ui-react';
 // Components
 import ButtonContent from './button-content';
 
-const ListItems = props => {
+const ListItems = (props) => {
   const { doChooseZone, list } = props;
 
   const map = list.map((item, index) => {

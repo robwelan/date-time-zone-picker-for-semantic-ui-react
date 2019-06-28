@@ -5,7 +5,7 @@ import { getClassNames, getInputProperties } from './functions';
 //  Custom Styles
 import './index.css';
 
-const DateTimeZoneInput = props => {
+const DateTimeZoneInput = (props) => {
   const {
     devsClasses,
     devsName,
@@ -26,7 +26,7 @@ const DateTimeZoneInput = props => {
     setTime,
     setTwentyFour,
     setValues,
-    setZone
+    setZone,
   );
 
   return (

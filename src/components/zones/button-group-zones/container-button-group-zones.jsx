@@ -6,8 +6,13 @@ import { Button } from 'semantic-ui-react';
 import ButtonContent from './button-content';
 import ListItems from './list-items';
 
-const ContainerButtonGroupZones = props => {
-  const { doChooseZone, doShowRegions, list, showAllLocations } = props;
+const ContainerButtonGroupZones = (props) => {
+  const {
+    doChooseZone,
+    doShowRegions,
+    list,
+    showAllLocations,
+  } = props;
 
   return (
     <div className="container-button-group-zones">

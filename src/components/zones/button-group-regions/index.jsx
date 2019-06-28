@@ -7,7 +7,7 @@ import { Button } from 'semantic-ui-react';
 import ButtonContent from './button-content';
 import ListItems from './list-items';
 
-const ButtonGroupRegions = props => {
+const ButtonGroupRegions = (props) => {
   const { doChooseRegion, doShowRegion, regions } = props;
 
   return (

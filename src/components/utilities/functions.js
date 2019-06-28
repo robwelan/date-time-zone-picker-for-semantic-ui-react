@@ -17,11 +17,9 @@ const getSafeDate = (year, month, day, hour, minute, second, millisecond) => {
   return d;
 };
 
-const getFormattedOffset = (value, index, char) =>
-  `${value.substring(0, index)}${char}${value.substring(index)}`;
+const getFormattedOffset = (value, index, char) => `${value.substring(0, index)}${char}${value.substring(index)}`;
 
-const replaceAllCharacters = (target, search, replace) =>
-  target.split(search).join(replace);
+const replaceAllCharacters = (target, search, replace) => target.split(search).join(replace);
 
 const roundDownToNearestFive = value => Math.floor(value / 5) * 5;
 
@@ -54,7 +52,7 @@ const getFormattedDateLabel = (year, month, day) => {
   const lm = month > 0 ? month - 1 : month;
   const label = format(
     getSafeDate(year, lm, day, 0, 0, 0, 0),
-    'dddd, DD-MMM-YYYY'
+    'dddd, DD-MMM-YYYY',
   );
 
   return label;
@@ -67,7 +65,7 @@ const getFormattedTimeLabel = (
   millisecond,
   showSecond,
   showMillisecond,
-  showTwentyFour
+  showTwentyFour,
 ) => {
   const timeFormat = getTimeFormat(showMillisecond, showSecond, showTwentyFour);
 
@@ -91,14 +89,13 @@ const getFormattedTimeLabel = (
 
 const getLastDayOfMonth = (year, month) => {
   const lastDay = Number(
-    getDaysInMonth(getSafeDate(year, month, 1, 0, 0, 0, 0))
+    getDaysInMonth(getSafeDate(year, month, 1, 0, 0, 0, 0)),
   );
 
   return lastDay;
 };
 
-const getISODayOfWeek = (year, month, day) =>
-  getISODay(getSafeDate(year, month, day, 0, 0, 0, 0));
+const getISODayOfWeek = (year, month, day) => getISODay(getSafeDate(year, month, day, 0, 0, 0, 0));
 
 const getAllDaysBetween = (
   yearStart,
@@ -106,26 +103,25 @@ const getAllDaysBetween = (
   dayStart,
   yearEnd,
   monthEnd,
-  dayEnd
-) =>
-  eachDay(
-    getSafeDate(yearStart, monthStart, dayStart, 0, 0, 0, 0),
-    getSafeDate(yearEnd, monthEnd, dayEnd, 0, 0, 0, 0)
-  );
+  dayEnd,
+) => eachDay(
+  getSafeDate(yearStart, monthStart, dayStart, 0, 0, 0, 0),
+  getSafeDate(yearEnd, monthEnd, dayEnd, 0, 0, 0, 0),
+);
 
 const getYearFromDate = date => getYear(date);
 const getMonthFromDate = date => getMonth(date);
 const getDayOfMonthFromDate = date => getDate(date);
 const getFormattedMonthNumber = date => Number(format(date, 'M'));
 
-const getZoneFormat = () => `[GMT]Z (z)`;
+const getZoneFormat = () => '[GMT]Z (z)';
 
 const getPickerTimeAsObject = (
   setTime,
   pickerTime,
   doTwentyFour,
   doSecond,
-  doMillisecond
+  doMillisecond,
 ) => {
   const {
     hour: timeHour,
@@ -151,7 +147,12 @@ const getPickerTimeAsObject = (
     }
   }
 
-  return { hour, minute, second, millisecond };
+  return {
+    hour,
+    minute,
+    second,
+    millisecond,
+  };
 };
 
 const getDateTimeObject = (
@@ -160,14 +161,14 @@ const getDateTimeObject = (
   pickerTime,
   doSecond,
   doMillisecond,
-  doTwentyFour
+  doTwentyFour,
 ) => {
   const time = getPickerTimeAsObject(
     setTime,
     pickerTime,
     doTwentyFour,
     doSecond,
-    doMillisecond
+    doMillisecond,
   );
 
   return {
@@ -189,7 +190,7 @@ const getDateTimeZoneObject = (
   pickerZone,
   doSecond,
   doMillisecond,
-  doTwentyFour
+  doTwentyFour,
 ) => {
   let data = {};
 
@@ -213,7 +214,7 @@ const getDateTimeZoneObject = (
       pickerTime,
       doTwentyFour,
       doSecond,
-      doMillisecond
+      doMillisecond,
     );
     data = {
       ...data,
@@ -233,8 +234,7 @@ const getDateTimeZoneObject = (
   return data;
 };
 
-const setTimeToTimeZone = (time, formatZone, zone) =>
-  formatToTimeZone(time, formatZone, zone);
+const setTimeToTimeZone = (time, formatZone, zone) => formatToTimeZone(time, formatZone, zone);
 
 const getCustomTimeFormat = (
   doSecond,
@@ -242,7 +242,7 @@ const getCustomTimeFormat = (
   doTwentyFour,
   setDate,
   setTime,
-  setZone
+  setZone,
 ) => {
   let customFormat = '';
   let zoneFormat = '';
@@ -276,7 +276,7 @@ const getDateTimeZoneAsOutputObject = (
   pickerZone,
   doSecond,
   doMillisecond,
-  doTwentyFour
+  doTwentyFour,
 ) => {
   const customFormat = getCustomTimeFormat(
     doSecond,
@@ -284,7 +284,7 @@ const getDateTimeZoneAsOutputObject = (
     doTwentyFour,
     setDate,
     setTime,
-    setZone
+    setZone,
   );
 
   let customValue = '';
@@ -295,7 +295,7 @@ const getDateTimeZoneAsOutputObject = (
     pickerTime,
     doSecond,
     doMillisecond,
-    doTwentyFour
+    doTwentyFour,
   );
 
   const safeDate = getSafeDate(
@@ -305,7 +305,7 @@ const getDateTimeZoneAsOutputObject = (
     myDateTime.time.hour,
     myDateTime.time.minute,
     myDateTime.time.second,
-    myDateTime.time.millisecond
+    myDateTime.time.millisecond,
   );
 
   const data = getDateTimeZoneObject(
@@ -317,7 +317,7 @@ const getDateTimeZoneAsOutputObject = (
     pickerZone,
     doSecond,
     doMillisecond,
-    doTwentyFour
+    doTwentyFour,
   );
 
   if (setZone) {

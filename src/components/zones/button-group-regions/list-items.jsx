@@ -5,7 +5,7 @@ import { Button } from 'semantic-ui-react';
 // Components
 import ButtonContent from './button-content';
 
-const ListItems = props => {
+const ListItems = (props) => {
   const { doShowRegion, regions } = props;
 
   const map = regions.map((region, index) => {

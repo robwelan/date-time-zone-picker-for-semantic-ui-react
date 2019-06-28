@@ -104,7 +104,7 @@ class Zones extends React.Component {
       );
     }
 
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = {
         ...prevState,
         selection: {
@@ -123,7 +123,7 @@ class Zones extends React.Component {
 
   chooseRegion() {
     return () => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         const newState = {
           ...prevState,
           selection: {
@@ -153,7 +153,7 @@ class Zones extends React.Component {
 
     return () => {
       doSetZone(zone);
-      this.setState(prevState => {
+      this.setState((prevState) => {
         const newState = {
           ...prevState,
           selection: {
@@ -185,7 +185,7 @@ class Zones extends React.Component {
         item => item.region.toLowerCase() === region.toLowerCase()
       );
 
-      this.setState(prevState => {
+      this.setState((prevState) => {
         const newState = {
           ...prevState,
           selection: {
@@ -218,7 +218,7 @@ class Zones extends React.Component {
       zones: { main },
     } = this.state;
 
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = {
         ...prevState,
         selection: {
@@ -246,7 +246,7 @@ class Zones extends React.Component {
   }
 
   showZones() {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = {
         ...prevState,
         visible: {

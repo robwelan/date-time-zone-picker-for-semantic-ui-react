@@ -59,7 +59,7 @@ class ControlNumber extends React.Component {
     const { min, max } = this.state;
     const newValue = getNumericOrMinOrMax(min, max, value);
 
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = {
         ...prevState,
         value: newValue,
@@ -76,7 +76,7 @@ class ControlNumber extends React.Component {
     const { max, min, value } = this.state;
     const newValue = getDecrement(min, max, value, 1);
 
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = {
         ...prevState,
         value: newValue,
@@ -93,7 +93,7 @@ class ControlNumber extends React.Component {
     const { max, min, value } = this.state;
     const newValue = getIncrement(min, max, value, 1);
 
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const newState = {
         ...prevState,
         value: newValue,

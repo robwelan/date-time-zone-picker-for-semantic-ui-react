@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
+
 // Components
 import MeridiemDropdown from './meridiem-dropdown';
 import AnalogClockDisplay from './anolog-clock-display';
@@ -12,10 +13,11 @@ import {
 } from '../number-controller';
 import PresentChange from '../present-change';
 import Spacer from '../spacer';
+
 // Styles
 import './index.css';
 
-const Clock = props => {
+const Clock = (props) => {
   const {
     doSetHour,
     doSetMinute,

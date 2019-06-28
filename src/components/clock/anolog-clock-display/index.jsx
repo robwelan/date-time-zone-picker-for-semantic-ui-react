@@ -9,7 +9,7 @@ import Spacer from '../../spacer';
 //  Styles
 import './index.css';
 
-const AnalogClockDisplay = props => {
+const AnalogClockDisplay = (props) => {
   const {
     hour,
     minute,

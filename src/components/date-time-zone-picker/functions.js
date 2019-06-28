@@ -122,7 +122,7 @@ const getDefaultNow = () => {
   };
 };
 
-const setPickerValuesDateToday = prevState => {
+const setPickerValuesDateToday = (prevState) => {
   const defaultNow = getDefaultNow();
 
   const newState = {
@@ -286,7 +286,7 @@ const setComponentDidMountState = (props, prevState) => {
     value.time.millisecond,
     setSeconds,
     setMilliseconds,
-    setTwentyFour
+    setTwentyFour,
   );
 
   const mountedState = {
@@ -352,7 +352,7 @@ const setComponentDidUpdateState = (props, prevState) => {
     value.time.millisecond,
     setSeconds,
     setMilliseconds,
-    setTwentyFour
+    setTwentyFour,
   );
 
   const updatedState = {
@@ -419,7 +419,7 @@ const setInvisibleCloser = prevState => ({
   },
 });
 
-const clearAllValues = prevState => {
+const clearAllValues = (prevState) => {
   const newState = {
     ...prevState,
     values: outputValues,
@@ -453,7 +453,7 @@ const setInvisibleModalAndSave = (prevState, props) => {
     pickerZone,
     setSeconds,
     setMilliseconds,
-    setTwentyFour
+    setTwentyFour,
   );
 
   newValues = {

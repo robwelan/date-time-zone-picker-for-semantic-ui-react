@@ -141,14 +141,12 @@ const getTextWidthEstimate = (str, fontSize = 10) => {
   return (
     str
       .split('')
-      .map(c =>
-        c.charCodeAt(0) < widths.length ? widths[c.charCodeAt(0)] : avg
-      )
+      .map(c => (c.charCodeAt(0) < widths.length ? widths[c.charCodeAt(0)] : avg))
       .reduce((cur, acc) => acc + cur) * fontSize
   );
 };
 
-const getClassNames = devClasses => {
+const getClassNames = (devClasses) => {
   const classes = [''];
 
   if (devClasses !== '') {
@@ -166,7 +164,7 @@ const getInputProperties = (
   setTime,
   setTwentyFour,
   setValues,
-  setZone
+  setZone,
 ) => {
   let placeholder = '';
   let placeholderDate = '';
@@ -215,13 +213,11 @@ const getInputProperties = (
   }
 
   if (setValues.changed && setValues.input.value !== '') {
-    nWidth =
-      getTextWidthEstimate(setValues.input.value, FONT_SIZE) / FONT_SIZE +
-      PIXEL_TO_EM_FACTOR;
+    nWidth = getTextWidthEstimate(setValues.input.value, FONT_SIZE) / FONT_SIZE
+    + PIXEL_TO_EM_FACTOR;
   } else {
-    nWidth =
-      getTextWidthEstimate(placeholder, FONT_SIZE) / FONT_SIZE +
-      PIXEL_TO_EM_FACTOR;
+    nWidth = getTextWidthEstimate(placeholder, FONT_SIZE) / FONT_SIZE
+    + PIXEL_TO_EM_FACTOR;
   }
 
   return { placeholder: placeholder.toUpperCase(), width: `${nWidth}em` };
