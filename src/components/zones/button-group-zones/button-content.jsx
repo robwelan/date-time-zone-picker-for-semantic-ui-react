@@ -14,7 +14,7 @@ const ButtonContent = (props) => {
     zone,
   } = props;
 
-  const src = require(`../../../images/time-zones/100x100/${image}.png`);
+  const src = require(`../../images/time-zones/100x100/${image}.png`);
 
   return (
     <React.Fragment>

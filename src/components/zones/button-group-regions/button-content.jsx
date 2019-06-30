@@ -6,7 +6,7 @@ import { Item } from 'semantic-ui-react';
 
 const ButtonContent = (props) => {
   const { title, image } = props;
-  const src = require(`../../../images/time-zones/100x100/${image}.png`);
+  const src = require(`../../images/time-zones/100x100/${image}.png`);
 
   return (
     <Item.Group>
