@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+
 //  Custom Functions
 import { getClassNames, getInputProperties } from './functions';
+
 //  Custom Styles
 import './index.css';
 

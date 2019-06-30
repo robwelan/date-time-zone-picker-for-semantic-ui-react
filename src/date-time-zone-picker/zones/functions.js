@@ -1,5 +1,7 @@
+//  Dependancies
 import { listTimeZones } from 'timezone-support';
-// import { formatToTimeZone } from 'date-fns-timezone/dist/formatToTimeZone';
+
+//  Utility Functions
 import {
   getFormattedOffset,
   isUnique,
@@ -20,25 +22,26 @@ const getButtonValues = (
 ) => {
   // TODO: make sure month + 1 is not necessary...
   const actualMonth = month + 1;
+
   const image = region.toLowerCase();
+
   const time = `${year}-${actualMonth}-${day} ${hour}:${minute}`;
+
   const formatToTimeZoneObject = {
     timeZone: identifier,
     convertTimeZone: true,
   };
-  // const formattedToTimeZone = formatToTimeZone(
-  //   time,
-  //   'HH:mm a',
-  //   formatToTimeZoneObject
-  // );
+
   const formattedToTimeZone = setTimeToTimeZone(
     time,
     'HH:mm a',
     formatToTimeZoneObject,
   );
-  // const offset = formatToTimeZone(time, 'ZZ', formatToTimeZoneObject);
+
   const offset = setTimeToTimeZone(time, 'ZZ', formatToTimeZoneObject);
+
   const formattedToTimeZoneOffset = getFormattedOffset(offset, 3, ':');
+
   const search = [zone, region, offset, formattedToTimeZoneOffset];
 
   return {

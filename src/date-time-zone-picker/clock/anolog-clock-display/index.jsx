@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+
 //  Semantic-UI-React
 import { Grid } from 'semantic-ui-react';
+
 //  Components
 import ClockNumbers from './clock-numbers';
 import ClockTicks from './clock-ticks';
 import Spacer from '../../spacer';
+
 //  Styles
 import './index.css';
 

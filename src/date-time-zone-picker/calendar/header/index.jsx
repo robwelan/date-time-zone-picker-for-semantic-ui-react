@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Titles } from './titles';
+
+//  Semantic-UI-React
 import { Divider, Grid } from 'semantic-ui-react';
+
+//  Titles
+import { Titles } from './titles';
 
 const Header = (props) => {
   const { firstDay } = props;
