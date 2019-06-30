@@ -4,7 +4,7 @@ import React from 'react';
 //  Custom Components
 import Calendar from '../calendar';
 import Clock from '../clock';
-import DateTimeZoneInput from '../date-time-zone-input';
+import DateTimeZoneInput from './date-time-zone-input';
 import ModalMain from '../modal';
 import Zones from '../zones';
 
