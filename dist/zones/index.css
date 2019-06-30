@@ -1,0 +1,108 @@
+.ui.grid.zone .ui.segment {
+  width: 100%;
+  padding: 36px 4px 4px 4px;
+  height: 100%;
+}
+
+div.ui.grid.zone,
+div.ui.grid.zone .ui.grid.collapsed,
+div.ui.grid.zone .ui.grid.container {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0;
+}
+
+.ui.top.attached.label:first-child + :not(.attached) {
+  margin: 0;
+}
+
+.ui.grid.timezone-controls .ui.buttons {
+  width: 100%;
+  padding: 0;
+}
+
+.container-button-group-regions,
+.container-button-group-zones {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.ui.container.zone .ui.top.attached.label:first-child+:not(.attached) {
+  margin: 0 !important;
+}
+
+.container-button-group-regions {
+  /* set 416px height with styles due to dynamic nature of allowTime and allowDate */
+  height: 100%;
+}
+
+.container-button-group-zones {
+  /* set 416px height with styles due to dynamic nature of allowTime and allowDate */
+  height: calc(100% - 42px);
+}
+
+.container-button-group-regions .region-buttons,
+.container-button-group-zones .zone-buttons {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.container-button-group-regions .ui.buttons {
+  width: calc(100% - 4px);
+  text-align: left;
+}
+
+.ui.container.zone div.ui.icon.input.locations-filter {
+  width: 100%;
+  padding: 0px 0 4px 0;
+  margin: 0 !important;
+}
+
+.container-button-group-zones {
+  /* set 364px height with styles due to dynamic nature of allowTime and allowDate */
+  overflow-x: hidden;
+}
+
+.container-button-group-zones .ui.buttons {
+  width: calc(100% - 4px);
+}
+
+.ui.grid.timezone-controls .ui.button,
+.container-button-group-regions .ui.button,
+.container-button-group-zones .ui.button {
+  text-align: left;
+  padding: 0 !important;
+}
+
+.ui.grid.timezone-controls .ui.button .item,
+.container-button-group-regions .ui.button .item,
+.container-button-group-zones .ui.button .item {
+  margin: 0 !important;
+  padding: 10px;
+  display: block;
+}
+
+.ui.grid.timezone-controls .ui.button .item::after,
+.container-button-group-regions .ui.button .item::after,
+.container-button-group-zones .ui.button .item::after {
+  width: 0;
+}
+
+.ui.grid.timezone-controls .ui.button .ui.mini.image,
+.container-button-group-regions .ui.button .ui.mini.image,
+.container-button-group-zones .ui.button .ui.mini.image {
+  height: 4em !important;
+  width: 4em !important;
+  margin: 0 !important;
+  float: left;
+}
+
+.ui.grid.timezone-controls .ui.button .content,
+.container-button-group-regions .ui.button .content,
+.container-button-group-zones .ui.button .content {
+  padding: 0 0 0 10px !important;
+  margin: 10px 0 0 0 !important;
+  float: right;
+  width: calc(100% - 4em) !important;
+}

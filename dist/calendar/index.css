@@ -1,0 +1,56 @@
+.ui.grid.calendar .ui.segment {
+  width: 100%;
+  padding: 36px 4px 4px 4px;
+}
+
+div.ui.grid.calendar,
+div.ui.grid.calendar .ui.grid.collapsed,
+div.ui.grid.calendar .ui.grid.container {
+  margin: 0 !important;
+  padding: 0;
+}
+
+div.ui.grid.calendar .ui.divider.day-title-divider-top {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+div.ui.grid.calendar .ui.divider.day-title-divider-bottom {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+div.ui.grid.calendar button.ui.button.today {
+  position: absolute;
+  width: calc(100% - 8px);
+  margin: 0;
+  left: 4px;
+  bottom: 4px;
+}
+
+/* center button text in day buttons */
+div.ui.grid.calendar button span {
+  display: inline-block;
+  position: relative;
+  transform: translateX(-50%);
+}
+
+/*
+  fix Button.Group widths :hover issue
+  right border disappears on hover without this fix
+*/
+div.ui.grid.calendar div.ui.buttons {
+  width: calc(100% + 1px);
+}
+
+div.ui.grid.calendar div.ui.buttons.start,
+div.ui.grid.calendar div.ui.buttons.middle {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+div.ui.grid.calendar div.ui.buttons.end,
+div.ui.grid.calendar div.ui.buttons.middle {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

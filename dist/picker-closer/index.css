@@ -1,0 +1,7 @@
+.ui.vertical.segment.scale.down.bottom.thin.visible.sidebar.picker-closer
+  .ui.bottom.attached.segment {
+  width: 100%;
+  left: 1px;
+  overflow: hidden;
+  margin-bottom: -20px;
+}

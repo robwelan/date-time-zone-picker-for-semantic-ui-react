@@ -1,0 +1,41 @@
+.ui.grid.collapsed.number-controller {
+  margin: 0;
+}
+
+.ui.grid.collapsed.number-controller .column {
+  padding: 0;
+}
+
+.ui.grid.collapsed.number-controller button {
+  width: 100%;
+}
+
+.number-controller input[type='number']::-webkit-inner-spin-button,
+.number-controller input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number-controller .ui.input {
+  height: 2.5em;
+}
+
+.number-controller .ui.input input {
+  border-radius: 0;
+}
+
+.number-controller button.ui.button.left {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  height: 2.5em;
+}
+
+.number-controller button.ui.button.right {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  height: 2.5em;
+}
+
+.ui.input.center-aligned > input {
+  text-align: center;
+}

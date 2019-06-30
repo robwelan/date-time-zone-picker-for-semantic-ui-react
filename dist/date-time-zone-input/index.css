@@ -1,0 +1,14 @@
+.date-time-zone-picker input {
+  cursor: pointer;
+}
+
+.date-time-zone-picker .ui.input {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  height: 2.543em;
+}
+
+.date-time-zone-picker .ui.input input {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
