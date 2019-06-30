@@ -2,7 +2,7 @@ import {
   getAllDaysBetween,
   getISODayOfWeek,
   getLastDayOfMonth,
-} from '../../../utilities/functions';
+} from '../../utilities/functions';
 
 const MAX_DAYS = 6;
 const WEEK_DAYS_AMOUNT = 7;

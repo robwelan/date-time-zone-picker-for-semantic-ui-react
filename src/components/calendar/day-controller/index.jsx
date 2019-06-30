@@ -9,7 +9,7 @@ import {
   getDayOfMonthFromDate,
   getMonthFromDate,
   getYearFromDate,
-} from '../../../utilities/functions';
+} from '../../utilities/functions';
 
 import { getDatesOfCalendarDisplay } from './functions';
 
