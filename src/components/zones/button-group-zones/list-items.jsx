@@ -3,6 +3,7 @@ import React from 'react';
 
 // Semantic-UI
 import { Button } from 'semantic-ui-react';
+
 // Components
 import ButtonContent from './button-content';
 

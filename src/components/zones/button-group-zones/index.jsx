@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+
 // Components
 import ContainerButtonGroupZones from './container-button-group-zones';
 import SearchLocations from './search-locations';
