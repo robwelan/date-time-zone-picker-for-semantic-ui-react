@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 //  Custom Components
-import Calendar from '../calendar';
-import Clock from '../clock';
+import Calendar from './calendar';
+import Clock from './clock';
 import DateTimeZoneInput from './date-time-zone-input';
-import ModalMain from '../modal';
-import Zones from '../zones';
+import ModalMain from './modal';
+import Zones from './zones';
 
 //  State
 import { defaultState } from './state';
@@ -38,7 +38,7 @@ import {
   getFormattedDateLabel,
   getFormattedTimeLabel,
   replaceAllCharacters,
-} from '../utilities/functions';
+} from './utilities/functions';
 
 class DateTimeZonePicker extends React.Component {
   constructor(props) {

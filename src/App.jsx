@@ -1,5 +1,5 @@
 import React from 'react';
-import DateTimeZonePicker from './components/date-time-zone-picker';
+import DateTimeZonePicker from './date-time-zone-picker';
 
 // Styles
 import './App.css';

@@ -1,12 +1,17 @@
+//  Dependancy Module
 import jstz from 'jstz';
+
+//  Local State
 import { outputValues } from './state';
+
+//  Utility Functions
 import {
   getDateTimeZoneAsOutputObject,
   getDayOfMonthFromDate,
   getFormattedMonthNumber,
   getFormattedTimeLabel,
   getYearFromDate,
-} from '../utilities/functions';
+} from './utilities/functions';
 
 const setOverrideForSetDate = (setDate, setTime, setZone) => {
   if (!setDate && !setTime && !setZone) {
