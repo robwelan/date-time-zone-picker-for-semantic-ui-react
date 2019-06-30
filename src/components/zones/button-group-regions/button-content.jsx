@@ -1,17 +1,20 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+
 // Semantic-UI
 import { Item } from 'semantic-ui-react';
 
 const ButtonContent = (props) => {
   const { title, image } = props;
+  const src = require(`../../../images/time-zones/100x100/${image}.png`);
 
   return (
     <Item.Group>
       <Item>
         <Item.Image
           size="mini"
-          src={`/images/time-zones/100x100/${image}.png`}
+          src={src}
+          alt={image}
         />
         <Item.Content>
           <Item.Header>{title}</Item.Header>

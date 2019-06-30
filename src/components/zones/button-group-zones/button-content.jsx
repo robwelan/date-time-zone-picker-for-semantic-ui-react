@@ -1,10 +1,20 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+
 // Semantic-UI
 import { Item } from 'semantic-ui-react';
 
 const ButtonContent = (props) => {
-  const { image, offset, time, title, option, zone } = props;
+  const {
+    image,
+    offset,
+    time,
+    title,
+    option,
+    zone,
+  } = props;
+
+  const src = require(`../../../images/time-zones/100x100/${image}.png`);
 
   return (
     <React.Fragment>
@@ -13,7 +23,8 @@ const ButtonContent = (props) => {
           <Item>
             <Item.Image
               size="mini"
-              src={`/images/time-zones/100x100/${image}.png`}
+              src={src}
+              alt={image}
             />
             <Item.Content>
               <Item.Header>{title}</Item.Header>
@@ -27,7 +38,8 @@ const ButtonContent = (props) => {
           <Item>
             <Item.Image
               size="mini"
-              src={`/images/time-zones/100x100/${image}.png`}
+              src={src}
+              alt={image}
             />
             <Item.Content>
               <Item.Header>{zone}</Item.Header>
