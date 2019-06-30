@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+
 //  Semantic-UI-React
 import { Button } from 'semantic-ui-react';
 
@@ -8,7 +9,7 @@ import {
   getDayOfMonthFromDate,
   getMonthFromDate,
   getYearFromDate,
-} from '../../utilities/functions';
+} from '../../../utilities/functions';
 
 import { getDatesOfCalendarDisplay } from './functions';
 
