@@ -64,60 +64,17 @@ div.ui.container.picker-content .zone {
   height: 100%;
 }
 
-/* TODO: fix up comments */
-/*
+@media only screen and (max-width: 767px) {
+  .ui.modal.modal-date-time-zone-picker .ui.container {
+    width: 320px !important;
+    margin: 0 !important;
+  }
 
-.ui.modal.date-time-zone-picker .pushable {
-  overflow: visible;
-
-  margin: 0 !important;
-  display: flex;
-  flex-direction: column;
+  .modals.dimmer .ui.modal.modal-date-time-zone-picker {
+    margin: 0;
+    padding: 0;
+  }
+  .ui.active.dimmer {
+    padding: 0;
+  }
 }
-
-.ui.modal.date-time-zone-picker .pusher {
-  flex: 1;
-}
-
-div.picker-control-buttons {
-  padding: 4px;
-}
-
-.ui.modal.content > .description,
-.ui.modal.date-time-zone-picker .ui.grid.container.main-controls {
-  width: 100%;
-  padding-top: 4px !important;
-}
-
-.ui.grid.container.main-controls .ui.card {
-  width: 100%;
-  margin-left: 4px;
-  margin-right: 4px;
-  margin-bottom: 4px;
-}
-
-.ui.grid.container.main-controls .ui.card .content {
-  width: 100%;
-  padding: 8px 4px 4px 4px;
-}
-
-.ui.modal.content > .description,
-.ui.grid.container.main-controls .ui.card .content .description {
-  padding-top: 4px !important;
-  padding-bottom: 4px !important;
-}
-
-.ui.grid.container.main-controls .ui.card .content .description p {
-  width: 100%;
-  padding: 1px;
-  margin: 0;
-}
-
-.ui.container .picker-content {
-  display: flex;
-  height: 100%;
-  padding: 4px;
-  margin: 0 !important;
-}
-
-*/

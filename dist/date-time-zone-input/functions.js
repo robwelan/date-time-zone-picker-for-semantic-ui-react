@@ -8,17 +8,6 @@ const getTextWidthEstimate = (str, fontSize = 10) => {
   return str.split('').map(c => c.charCodeAt(0) < widths.length ? widths[c.charCodeAt(0)] : avg).reduce((cur, acc) => acc + cur) * fontSize;
 };
 
-const getClassNames = devClasses => {
-  const classes = [''];
-
-  if (devClasses !== '') {
-    const customClasses = devClasses.split(' ');
-    classes.push(...customClasses);
-  }
-
-  return classes;
-};
-
 const getInputProperties = (setDate, setMilliseconds, setSeconds, setTime, setTwentyFour, setValues, setZone) => {
   let placeholder = '';
   let placeholderDate = '';
@@ -78,4 +67,4 @@ const getInputProperties = (setDate, setMilliseconds, setSeconds, setTime, setTw
   };
 };
 
-export { getClassNames, getInputProperties };
+export { getInputProperties };

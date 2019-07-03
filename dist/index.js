@@ -9,7 +9,7 @@ import Zones from './zones'; //  State
 
 import { defaultState } from './state'; //  Functions
 
-import { clearAllValues, doCheckPropsChanged, getDefaultNow, setComponentDidMountState, setComponentDidUpdateState, setInvisibleCloser, setPickerValuesDate, setPickerValuesDateToday, setPickerValuesDay, setPickerValuesTime, setInvisibleModal, setInvisibleModalAndSave, setOverrideForSetDate, setVisibleModal, setVisibleDate, setVisibleTime, setVisibleZone, toggleVisibleCloser } from './functions'; //  Utilities
+import { clearAllValues, doCheckPropsChanged, getDefaultNow, getClassNames, setComponentDidMountState, setComponentDidUpdateState, setInvisibleCloser, setPickerValuesDate, setPickerValuesDateToday, setPickerValuesDay, setPickerValuesTime, setInvisibleModal, setInvisibleModalAndSave, setOverrideForSetDate, setVisibleModal, setVisibleDate, setVisibleTime, setVisibleZone, toggleVisibleCloser } from './functions'; //  Utilities
 
 import { getFormattedDateLabel, getFormattedTimeLabel, replaceAllCharacters } from './utilities/functions';
 
@@ -271,10 +271,11 @@ class DateTimeZonePicker extends React.Component {
       labelZone = replaceAllCharacters(zone, '_', ' ');
     }
 
+    const classNames = getClassNames(className);
+    classNames.unshift('date-time-zone-picker');
     return React.createElement("div", {
-      className: "date-time-zone-picker"
+      className: classNames.join(' ').trim()
     }, React.createElement(DateTimeZoneInput, {
-      devsClasses: className,
       devsName: setName,
       doOnClick: this.doShowModal,
       setValues: values,

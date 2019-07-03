@@ -5,6 +5,17 @@ import { outputValues } from './state'; //  Utility Functions
 
 import { getDateTimeZoneAsOutputObject, getDayOfMonthFromDate, getFormattedMonthNumber, getFormattedTimeLabel, getYearFromDate } from './utilities/functions';
 
+const getClassNames = devClasses => {
+  const classes = [''];
+
+  if (devClasses !== '') {
+    const customClasses = devClasses.split(' ');
+    classes.unshift(...customClasses);
+  }
+
+  return classes;
+};
+
 const setOverrideForSetDate = (setDate, setTime, setZone) => {
   if (!setDate && !setTime && !setZone) {
     return true;
@@ -459,4 +470,4 @@ const setVisibleZone = prevState => ({ ...prevState,
   }
 });
 
-export { clearAllValues, doCheckPropsChanged, getDefaultNow, setComponentDidMountState, setComponentDidUpdateState, setPickerValuesDate, setPickerValuesDateToday, setPickerValuesDay, setPickerValuesTime, setOverrideForSetDate, setVisibleModal, setInvisibleModal, setInvisibleModalAndSave, setInvisibleCloser, setVisibleDate, setVisibleTime, setVisibleZone, toggleVisibleCloser };
+export { clearAllValues, doCheckPropsChanged, getDefaultNow, getClassNames, setComponentDidMountState, setComponentDidUpdateState, setPickerValuesDate, setPickerValuesDateToday, setPickerValuesDay, setPickerValuesTime, setOverrideForSetDate, setVisibleModal, setInvisibleModal, setInvisibleModalAndSave, setInvisibleCloser, setVisibleDate, setVisibleTime, setVisibleZone, toggleVisibleCloser };
