@@ -16,6 +16,7 @@ import {
   clearAllValues,
   doCheckPropsChanged,
   getDefaultNow,
+  getClassNames,
   setComponentDidMountState,
   setComponentDidUpdateState,
   setInvisibleCloser,
@@ -325,10 +326,13 @@ class DateTimeZonePicker extends React.Component {
       labelZone = replaceAllCharacters(zone, '_', ' ');
     }
 
+    const classNames = getClassNames(className);
+    
+    classNames.unshift('date-time-zone-picker');
+
     return (
-      <div className="date-time-zone-picker">
+      <div className={classNames.join(' ').trim()}>
         <DateTimeZoneInput
-          devsClasses={className}
           devsName={setName}
           doOnClick={this.doShowModal}
           setValues={values}

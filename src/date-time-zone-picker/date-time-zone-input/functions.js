@@ -146,17 +146,6 @@ const getTextWidthEstimate = (str, fontSize = 10) => {
   );
 };
 
-const getClassNames = (devClasses) => {
-  const classes = [''];
-
-  if (devClasses !== '') {
-    const customClasses = devClasses.split(' ');
-    classes.push(...customClasses);
-  }
-
-  return classes;
-};
-
 const getInputProperties = (
   setDate,
   setMilliseconds,
@@ -223,4 +212,4 @@ const getInputProperties = (
   return { placeholder: placeholder.toUpperCase(), width: `${nWidth}em` };
 };
 
-export { getClassNames, getInputProperties };
+export { getInputProperties };

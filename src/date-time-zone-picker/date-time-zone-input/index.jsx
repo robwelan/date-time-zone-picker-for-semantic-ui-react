@@ -2,14 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 //  Custom Functions
-import { getClassNames, getInputProperties } from './functions';
+import { getInputProperties } from './functions';
 
 //  Custom Styles
 import './index.css';
 
 const DateTimeZoneInput = (props) => {
   const {
-    devsClasses,
     devsName,
     doOnClick,
     setDate,
@@ -20,7 +19,7 @@ const DateTimeZoneInput = (props) => {
     setValues,
     setZone,
   } = props;
-  const classes = getClassNames(devsClasses);
+
   const InputProperties = getInputProperties(
     setDate,
     setMilliseconds,
@@ -34,20 +33,18 @@ const DateTimeZoneInput = (props) => {
   return (
     <div className="ui input">
       <input
-        className={classes.join(' ').trim()}
         name={devsName}
         onClick={doOnClick}
         readOnly="readonly"
         placeholder={InputProperties.placeholder}
         value={setValues.input.value}
-        style={{ width: InputProperties.width }}
+        // style={{ width: InputProperties.width }}
       />
     </div>
   );
 };
 
 DateTimeZoneInput.defaultProps = {
-  devsClasses: '',
   devsName: '',
   setValues: {},
 };
@@ -55,7 +52,6 @@ DateTimeZoneInput.defaultProps = {
 DateTimeZoneInput.propTypes = {
   doOnClick: PropTypes.func.isRequired,
   devsName: PropTypes.string,
-  devsClasses: PropTypes.string,
   setDate: PropTypes.bool.isRequired,
   setMilliseconds: PropTypes.bool.isRequired,
   setSeconds: PropTypes.bool.isRequired,

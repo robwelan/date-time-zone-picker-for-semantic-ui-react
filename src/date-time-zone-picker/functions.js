@@ -13,6 +13,17 @@ import {
   getYearFromDate,
 } from './utilities/functions';
 
+const getClassNames = (devClasses) => {
+  const classes = [''];
+
+  if (devClasses !== '') {
+    const customClasses = devClasses.split(' ');
+    classes.unshift(...customClasses);
+  }
+
+  return classes;
+};
+
 const setOverrideForSetDate = (setDate, setTime, setZone) => {
   if (!setDate && !setTime && !setZone) {
     return true;
@@ -556,6 +567,7 @@ export {
   clearAllValues,
   doCheckPropsChanged,
   getDefaultNow,
+  getClassNames,
   setComponentDidMountState,
   setComponentDidUpdateState,
   setPickerValuesDate,
