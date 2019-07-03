@@ -2,6 +2,8 @@
 
 ## Status
 
+Coming Soon: dedicated documentation page.
+
 In Progress.
 
 This is a side project and a labour of love at that.
@@ -9,6 +11,8 @@ This is a side project and a labour of love at that.
 ## How To Include
 
 `import DateTimeZonePicker from 'date-time-zone-picker-for-semantic-ui-react'`
+
+See Component further down for information on how to use.
 
 ## About
 
@@ -42,11 +46,6 @@ It uses date-fns and date-fns-timezone to work its magic. There is no moment.js 
 - eslint-plugin-react
 - eslint-config-airbnb
 - eslint-config-airbnb-base
-
-## Use Yarn
-
-- yarn start to start the app
-- yarn build to build the app
 
 ---
 
@@ -164,6 +163,13 @@ output: { date: { year: 2019, month: 6, day: 1 }, time: { hour: 18, minute: 59, 
 Depending on the Props set, your shape will return either an empty object ({}) or a date object ({date: {year: ...}}) or a time object ({time: {hour: ...}}) or a zone object {zone: 'Australia/Sydney'}. If setDate and setTime are both true and setZone is false, then the returned data object will return a data object including date object and a time object, but not a zone object.
 
 You can expect to get returned what you ask the Picker to enable you to pick - but no more. In other words, if you setDate to _true_ and setZone to _true_, date and zone will be returned in the _data_ object, but not time.
+
+---
+
+## Use Yarn
+
+- yarn start to start the app
+- yarn build to build the app
 
 ---
 
