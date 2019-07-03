@@ -38,7 +38,7 @@ const DateTimeZoneInput = (props) => {
         readOnly="readonly"
         placeholder={InputProperties.placeholder}
         value={setValues.input.value}
-        // style={{ width: InputProperties.width }}
+        style={{ width: InputProperties.width }}
       />
     </div>
   );
