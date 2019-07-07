@@ -271,10 +271,10 @@ class DateTimeZonePicker extends React.Component {
   render() {
     const {
       className,
+      name,
       setDate: overrideSetDate,
       setFirstDay,
       setMilliseconds,
-      setName,
       setSeconds,
       setTime,
       setTwentyFour,
@@ -324,7 +324,7 @@ class DateTimeZonePicker extends React.Component {
     return (
       <div className={classNames.join(' ').trim()}>
         <DateTimeZoneInput
-          devsName={setName}
+          devsName={name}
           doOnClick={this.doShowModal}
           setValues={values}
           setDate={setDate}
@@ -435,9 +435,9 @@ DateTimeZonePicker.defaultProps = {
   },
   //  settings
   className: '',
+  name: '',
   setDate: true,
   setFirstDay: 'Sunday',
-  setName: '',
   setMilliseconds: false,
   setSeconds: false,
   setTwentyFour: true,
@@ -465,9 +465,9 @@ DateTimeZonePicker.propTypes = {
   }),
   //  settings:
   className: PropTypes.string,
+  name: PropTypes.string,
   setDate: PropTypes.bool,
   setFirstDay: PropTypes.string,
-  setName: PropTypes.string,
   setSeconds: PropTypes.bool,
   setMilliseconds: PropTypes.bool,
   setTwentyFour: PropTypes.bool,
