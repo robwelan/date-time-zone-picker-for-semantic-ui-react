@@ -285,13 +285,7 @@ class DateTimeZonePicker extends React.Component {
       picker: {
         values: {
           date: { day, month, year },
-          time: {
-            hour,
-            minute,
-            second,
-            millisecond,
-            meridiem,
-          },
+          time,
           zone,
         },
         visible: {
@@ -311,10 +305,7 @@ class DateTimeZonePicker extends React.Component {
     const labelDate = getFormattedDateLabel(year, month, day);
 
     const labelTime = getFormattedTimeLabel(
-      hour,
-      minute,
-      second,
-      millisecond,
+      time,
       setSeconds,
       setMilliseconds,
       setTwentyFour,
@@ -327,7 +318,7 @@ class DateTimeZonePicker extends React.Component {
     }
 
     const classNames = getClassNames(className);
-    
+
     classNames.unshift('date-time-zone-picker');
 
     return (
@@ -390,11 +381,11 @@ class DateTimeZonePicker extends React.Component {
               doSetSecond={this.doSetSecond}
               doSetMillisecond={this.doSetMillisecond}
               doSetMeridiem={this.doSetMeridiem}
-              hour={hour}
-              minute={minute}
-              second={second}
-              millisecond={millisecond}
-              meridiem={meridiem}
+              hour={time.hour}
+              minute={time.minute}
+              second={time.second}
+              millisecond={time.millisecond}
+              meridiem={time.meridiem}
               showMillisecond={setMilliseconds}
               showSecond={setSeconds}
               showTwentyFour={setTwentyFour}
@@ -410,10 +401,10 @@ class DateTimeZonePicker extends React.Component {
               setYear={year}
               setMonth={month}
               setDay={day}
-              setHour={hour}
-              setMinute={minute}
-              setSecond={second}
-              setMillisecond={millisecond}
+              setHour={time.hour}
+              setMinute={time.minute}
+              setSecond={time.second}
+              setMillisecond={time.millisecond}
               showZone={showZone}
               zoneTitle={zone}
             />
