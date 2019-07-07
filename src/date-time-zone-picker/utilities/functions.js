@@ -18,6 +18,15 @@ const getSafeDate = (year, month, day, hour, minute, second, millisecond) => {
   return d;
 };
 
+const hasObjectGotProperty = (object, property) => {
+  let check = false;
+  if (Object.prototype.hasOwnProperty.call(object, property)) {
+    check = true;
+  }
+
+  return check;
+};
+
 const getFormattedOffset = (value, index, char) => `${value.substring(0, index)}${char}${value.substring(index)}`;
 
 const replaceAllCharacters = (target, search, replace) => target.split(search).join(replace);
@@ -60,28 +69,31 @@ const getFormattedDateLabel = (year, month, day) => {
 };
 
 const getFormattedTimeLabel = (
-  hour,
-  minute,
-  second,
-  millisecond,
+  time,
   showSecond,
   showMillisecond,
   showTwentyFour,
 ) => {
+  const {
+    hour,
+    minute,
+    second,
+    millisecond,
+  } = time;
   const timeFormat = getTimeFormat(showMillisecond, showSecond, showTwentyFour);
 
   const date = new Date();
 
-  const time = date.setHours(hour, minute, second, millisecond);
+  const newTime = date.setHours(hour, minute, second, millisecond);
 
-  const label = format(time, timeFormat);
+  const label = format(newTime, timeFormat);
 
   const formattedTime = {
-    hour: Number(format(time, showTwentyFour ? 'H' : 'h')),
+    hour: Number(format(newTime, showTwentyFour ? 'H' : 'h')),
     minute,
     second,
     millisecond,
-    meridiem: format(time, 'a'),
+    meridiem: format(newTime, 'a'),
     label,
   };
 
@@ -351,6 +363,7 @@ export {
   getTimeFormat,
   getYearFromDate,
   getZoneFormat,
+  hasObjectGotProperty,
   isUnique,
   setTimeToTimeZone,
   replaceAllCharacters,
