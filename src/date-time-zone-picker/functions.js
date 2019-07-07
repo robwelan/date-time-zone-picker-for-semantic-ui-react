@@ -254,6 +254,44 @@ const setPickerValuesTime = (prevState, parameter, value) => {
   return newState;
 };
 
+const getOutputValuesAsObject = (
+  setDate,
+  setTime,
+  setZone,
+  pickerDate,
+  pickerTime,
+  pickerZone,
+  setSeconds,
+  setMilliseconds,
+  setTwentyFour,
+) => {
+  let newValues = { ...outputValues, changed: true };
+
+  const values = getDateTimeZoneAsOutputObject(
+    setDate,
+    setTime,
+    setZone,
+    pickerDate,
+    pickerTime,
+    pickerZone,
+    setSeconds,
+    setMilliseconds,
+    setTwentyFour,
+  );
+
+  newValues = {
+    ...newValues,
+
+    input: {
+      value: values.value,
+    },
+
+    data: values.data,
+  };
+
+  return newValues;
+};
+
 const getComponentDidMountVisibleState = (props, prevState) => {
   const { setDate, setTime, setZone } = props;
   let date = false;
@@ -395,6 +433,25 @@ const setComponentDidMountState = (props, prevState) => {
     }
   }
 
+  let newOutputValues = {
+    ...outputValues,
+  };
+
+  if (hasObjectGotProperty(value, 'date') || hasObjectGotProperty(value, 'time') || hasObjectGotProperty(value, 'zone')) {
+    newOutputValues = getOutputValuesAsObject(
+      setDate,
+      setTime,
+      setZone,
+      objectDate,
+      objectTime,
+      objectZone.zone,
+      setSeconds,
+      setMilliseconds,
+      setTwentyFour,
+    );
+  }
+
+
   const mountedState = {
     ...prevState,
     picker: {
@@ -426,6 +483,9 @@ const setComponentDidMountState = (props, prevState) => {
         ...prevState.picker.visible,
         ...visibleState,
       },
+    },
+    values: {
+      ...newOutputValues,
     },
   };
 
@@ -543,9 +603,8 @@ const setInvisibleModalAndSave = (prevState, props) => {
     setTime,
     setZone,
   } = props;
-  let newValues = { ...outputValues, changed: true };
 
-  const values = getDateTimeZoneAsOutputObject(
+  const newValues = getOutputValuesAsObject(
     setDate,
     setTime,
     setZone,
@@ -556,16 +615,6 @@ const setInvisibleModalAndSave = (prevState, props) => {
     setMilliseconds,
     setTwentyFour,
   );
-
-  newValues = {
-    ...newValues,
-
-    input: {
-      value: values.value,
-    },
-
-    data: values.data,
-  };
 
   const newState = {
     picker: {
