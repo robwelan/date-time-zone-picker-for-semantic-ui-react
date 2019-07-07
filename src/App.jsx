@@ -4,19 +4,19 @@ import DateTimeZonePicker from './date-time-zone-picker';
 // Styles
 import './App.css';
 
-let mockApi = {
-  date: {
-    year: 1975,
-    month: 6,
-    day: 20,
-  },
+const mockApi = {
+  // date: {
+  //   year: 1975,
+  //   month: 6,
+  //   day: 20,
+  // },
   // time: {
   //   hour: 1,
   //   minute: 2,
   //   second: 0,
   //   millisecond: 0,
   // },
-  //  zone: 'Australia/Sydney',
+  // zone: 'Australia/Sydney',
 };
 
 function App() {
