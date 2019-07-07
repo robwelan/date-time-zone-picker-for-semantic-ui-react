@@ -18,6 +18,9 @@ import ChangeControls from '../change-controls';
 import ControlButtons from './control-buttons';
 import PickerCloser from '../picker-closer';
 
+//  Function(s)
+import doShowChangeControls from './functions';
+
 //  Styles
 import './index.css';
 
@@ -72,6 +75,8 @@ const ModalMain = (props) => {
     return 'left';
   };
 
+  const showChangeControls = doShowChangeControls(allowDate, allowTime, allowZone);
+
   return (
     <Modal
       className="modal-date-time-zone-picker"
@@ -96,7 +101,7 @@ const ModalMain = (props) => {
                       {getCloserLabel()}
                     </Label>
                   </Button>
-                  {allowDate && (allowTime || allowZone) && (
+                  {showChangeControls && (
                     <ChangeControls
                       actions={{
                         showDate: actShowCalendar,
