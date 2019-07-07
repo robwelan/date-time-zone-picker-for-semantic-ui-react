@@ -5,7 +5,9 @@ import { Button, Card, Container, Grid, Icon, Label, Modal, Sidebar } from 'sema
 
 import ChangeControls from '../change-controls';
 import ControlButtons from './control-buttons';
-import PickerCloser from '../picker-closer'; //  Styles
+import PickerCloser from '../picker-closer'; //  Function(s)
+
+import doShowChangeControls from './functions'; //  Styles
 
 import './index.css';
 /*
@@ -60,6 +62,7 @@ const ModalMain = props => {
     return 'left';
   };
 
+  const showChangeControls = doShowChangeControls(allowDate, allowTime, allowZone);
   return React.createElement(Modal, {
     className: "modal-date-time-zone-picker",
     closeOnEscape: false,
@@ -90,7 +93,7 @@ const ModalMain = props => {
     as: "a",
     basic: true,
     onClick: showCloser
-  }, getCloserLabel())), allowDate && (allowTime || allowZone) && React.createElement(ChangeControls, {
+  }, getCloserLabel())), showChangeControls && React.createElement(ChangeControls, {
     actions: {
       showDate: actShowCalendar,
       showTime: actShowClock,

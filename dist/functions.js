@@ -3,7 +3,7 @@ import jstz from 'jstz'; //  Local State
 
 import { outputValues } from './state'; //  Utility Functions
 
-import { getDateTimeZoneAsOutputObject, getDayOfMonthFromDate, getFormattedMonthNumber, getFormattedTimeLabel, getYearFromDate } from './utilities/functions';
+import { getDateTimeZoneAsOutputObject, getDayOfMonthFromDate, getFormattedMonthNumber, getFormattedTimeLabel, getYearFromDate, hasObjectGotProperty } from './utilities/functions';
 
 const getClassNames = devClasses => {
   const classes = [''];
@@ -45,32 +45,44 @@ const doCheckPropsChanged = (prevProps, nextProps) => {
   } // Date Checks
 
 
-  if (prevValue.date.year !== nextValue.date.year) {
-    return true;
+  if (hasObjectGotProperty(prevValue, 'date') && hasObjectGotProperty(nextValue, 'date')) {
+    if (prevValue.date.year !== nextValue.date.year) {
+      return true;
+    }
+
+    if (prevValue.date.month !== nextValue.date.month) {
+      return true;
+    }
+
+    if (prevValue.date.day !== nextValue.date.day) {
+      return true;
+    }
   }
 
-  if (prevValue.date.month !== nextValue.date.month) {
-    return true;
-  }
-
-  if (prevValue.date.day !== nextValue.date.day) {
+  if (hasObjectGotProperty(prevValue, 'date') !== hasObjectGotProperty(nextValue, 'date')) {
     return true;
   } // Time Checks
 
 
-  if (prevValue.time.hour !== nextValue.time.hour) {
-    return true;
+  if (hasObjectGotProperty(prevValue, 'time') && hasObjectGotProperty(nextValue, 'time')) {
+    if (prevValue.time.hour !== nextValue.time.hour) {
+      return true;
+    }
+
+    if (prevValue.time.minute !== nextValue.time.minute) {
+      return true;
+    }
+
+    if (prevValue.time.second !== nextValue.time.second) {
+      return true;
+    }
+
+    if (prevValue.time.millisecond !== nextValue.time.millisecond) {
+      return true;
+    }
   }
 
-  if (prevValue.time.minute !== nextValue.time.minute) {
-    return true;
-  }
-
-  if (prevValue.time.second !== nextValue.time.second) {
-    return true;
-  }
-
-  if (prevValue.time.millisecond !== nextValue.time.millisecond) {
+  if (hasObjectGotProperty(prevValue, 'time') !== hasObjectGotProperty(nextValue, 'time')) {
     return true;
   }
 
@@ -209,6 +221,20 @@ const setPickerValuesTime = (prevState, parameter, value) => {
   return newState;
 };
 
+const getOutputValuesAsObject = (setDate, setTime, setZone, pickerDate, pickerTime, pickerZone, setSeconds, setMilliseconds, setTwentyFour) => {
+  let newValues = { ...outputValues,
+    changed: true
+  };
+  const values = getDateTimeZoneAsOutputObject(setDate, setTime, setZone, pickerDate, pickerTime, pickerZone, setSeconds, setMilliseconds, setTwentyFour);
+  newValues = { ...newValues,
+    input: {
+      value: values.value
+    },
+    data: values.data
+  };
+  return newValues;
+};
+
 const getComponentDidMountVisibleState = (props, prevState) => {
   const {
     setDate,
@@ -247,12 +273,43 @@ const getComponentDidMountVisibleState = (props, prevState) => {
   return visibleState;
 };
 
+const setTimeObject = (oT, newTime, setSeconds, setMilliseconds) => {
+  let objectTime = {};
+  objectTime = { ...oT,
+    hour: newTime.hour,
+    minute: newTime.minute
+  };
+
+  if (setSeconds) {
+    objectTime = { ...objectTime,
+      second: newTime.second
+    };
+
+    if (setMilliseconds) {
+      objectTime = { ...objectTime,
+        millisecond: newTime.millisecond
+      };
+    } else {
+      objectTime = { ...objectTime,
+        millisecond: 0
+      };
+    }
+  } else {
+    objectTime = { ...objectTime,
+      second: 0,
+      millisecond: 0
+    };
+  }
+
+  return objectTime;
+};
+
 const setComponentDidMountState = (props, prevState) => {
   const {
     // value
     value,
     // settings
-    setClasses,
+    className,
     setDate,
     setFirstDay,
     setName,
@@ -263,11 +320,60 @@ const setComponentDidMountState = (props, prevState) => {
     setZone
   } = props;
   const visibleState = getComponentDidMountVisibleState(props, prevState);
-  const timeLabel = getFormattedTimeLabel(value.time.hour, value.time.minute, value.time.second, value.time.millisecond, setSeconds, setMilliseconds, setTwentyFour);
+  const detailedNow = getDefaultNow();
+  let objectDate = {
+    year: detailedNow.year,
+    month: detailedNow.month,
+    day: detailedNow.day
+  };
+
+  if (hasObjectGotProperty(value, 'date')) {
+    objectDate = { ...objectDate,
+      year: value.date.year,
+      month: value.date.month,
+      day: value.date.day
+    };
+  }
+
+  let objectTime = {
+    hour: 0,
+    minute: 0,
+    second: 0,
+    millisecond: 0
+  };
+
+  if (setTime) {
+    if (hasObjectGotProperty(value, 'time')) {
+      objectTime = setTimeObject(objectTime, value.time, setSeconds, setMilliseconds);
+    } else {
+      objectTime = setTimeObject(objectTime, detailedNow, setSeconds, setMilliseconds);
+    }
+  }
+
+  const timeLabel = getFormattedTimeLabel(objectTime, setSeconds, setMilliseconds, setTwentyFour);
+  let objectZone = {
+    zone: detailedNow.zone
+  };
+
+  if (hasObjectGotProperty(value, 'zone')) {
+    if (value.zone !== '') {
+      objectZone = {
+        zone: value.zone
+      };
+    }
+  }
+
+  let newOutputValues = { ...outputValues
+  };
+
+  if (hasObjectGotProperty(value, 'date') || hasObjectGotProperty(value, 'time') || hasObjectGotProperty(value, 'zone')) {
+    newOutputValues = getOutputValuesAsObject(setDate, setTime, setZone, objectDate, objectTime, objectZone.zone, setSeconds, setMilliseconds, setTwentyFour);
+  }
+
   const mountedState = { ...prevState,
     picker: {
       settings: {
-        classes: setClasses,
+        classes: className,
         date: setOverrideForSetDate(setDate, setTime, setZone),
         twentyFour: setTwentyFour,
         firstDay: setFirstDay,
@@ -278,23 +384,22 @@ const setComponentDidMountState = (props, prevState) => {
         zone: setZone
       },
       values: {
-        date: {
-          year: value.date.year,
-          month: value.date.month,
-          day: value.date.day
+        date: { ...objectDate
         },
         time: {
           hour: timeLabel.hour,
-          minute: value.time.minute,
-          second: value.time.second,
-          millisecond: value.time.millisecond,
+          minute: objectTime.minute,
+          second: objectTime.second,
+          millisecond: objectTime.millisecond,
           meridiem: timeLabel.meridiem
         },
-        zone: value.zone
+        zone: objectZone.zone
       },
       visible: { ...prevState.picker.visible,
         ...visibleState
       }
+    },
+    values: { ...newOutputValues
     }
   };
   return mountedState;
@@ -316,7 +421,7 @@ const setComponentDidUpdateState = (props, prevState) => {
     setZone
   } = props;
   const visibleState = getComponentDidMountVisibleState(props, prevState);
-  const timeLabel = getFormattedTimeLabel(value.time.hour, value.time.minute, value.time.second, value.time.millisecond, setSeconds, setMilliseconds, setTwentyFour);
+  const timeLabel = getFormattedTimeLabel(value.time, setSeconds, setMilliseconds, setTwentyFour);
   const updatedState = { ...prevState,
     picker: {
       settings: {
@@ -397,16 +502,7 @@ const setInvisibleModalAndSave = (prevState, props) => {
     setTime,
     setZone
   } = props;
-  let newValues = { ...outputValues,
-    changed: true
-  };
-  const values = getDateTimeZoneAsOutputObject(setDate, setTime, setZone, pickerDate, pickerTime, pickerZone, setSeconds, setMilliseconds, setTwentyFour);
-  newValues = { ...newValues,
-    input: {
-      value: values.value
-    },
-    data: values.data
-  };
+  const newValues = getOutputValuesAsObject(setDate, setTime, setZone, pickerDate, pickerTime, pickerZone, setSeconds, setMilliseconds, setTwentyFour);
   const newState = {
     picker: { ...prevState.picker,
       visible: { ...prevState.picker.visible,

@@ -225,10 +225,10 @@ class DateTimeZonePicker extends React.Component {
   render() {
     const {
       className,
+      name,
       setDate: overrideSetDate,
       setFirstDay,
       setMilliseconds,
-      setName,
       setSeconds,
       setTime,
       setTwentyFour,
@@ -242,13 +242,7 @@ class DateTimeZonePicker extends React.Component {
             month,
             year
           },
-          time: {
-            hour,
-            minute,
-            second,
-            millisecond,
-            meridiem
-          },
+          time,
           zone
         },
         visible: {
@@ -264,7 +258,7 @@ class DateTimeZonePicker extends React.Component {
     } = this.state;
     const setDate = setOverrideForSetDate(overrideSetDate, setTime, setZone);
     const labelDate = getFormattedDateLabel(year, month, day);
-    const labelTime = getFormattedTimeLabel(hour, minute, second, millisecond, setSeconds, setMilliseconds, setTwentyFour);
+    const labelTime = getFormattedTimeLabel(time, setSeconds, setMilliseconds, setTwentyFour);
     let labelZone = '';
 
     if (typeof zone !== 'undefined' && zone !== '') {
@@ -276,7 +270,7 @@ class DateTimeZonePicker extends React.Component {
     return React.createElement("div", {
       className: classNames.join(' ').trim()
     }, React.createElement(DateTimeZoneInput, {
-      devsName: setName,
+      devsName: name,
       doOnClick: this.doShowModal,
       setValues: values,
       setDate: setDate,
@@ -327,11 +321,11 @@ class DateTimeZonePicker extends React.Component {
       doSetSecond: this.doSetSecond,
       doSetMillisecond: this.doSetMillisecond,
       doSetMeridiem: this.doSetMeridiem,
-      hour: hour,
-      minute: minute,
-      second: second,
-      millisecond: millisecond,
-      meridiem: meridiem,
+      hour: time.hour,
+      minute: time.minute,
+      second: time.second,
+      millisecond: time.millisecond,
+      meridiem: time.meridiem,
       showMillisecond: setMilliseconds,
       showSecond: setSeconds,
       showTwentyFour: setTwentyFour,
@@ -344,10 +338,10 @@ class DateTimeZonePicker extends React.Component {
       setYear: year,
       setMonth: month,
       setDay: day,
-      setHour: hour,
-      setMinute: minute,
-      setSecond: second,
-      setMillisecond: millisecond,
+      setHour: time.hour,
+      setMinute: time.minute,
+      setSecond: time.second,
+      setMillisecond: time.millisecond,
       showZone: showZone,
       zoneTitle: zone
     })));
@@ -374,9 +368,9 @@ DateTimeZonePicker.defaultProps = {
   },
   //  settings
   className: '',
+  name: '',
   setDate: true,
   setFirstDay: 'Sunday',
-  setName: '',
   setMilliseconds: false,
   setSeconds: false,
   setTwentyFour: true,
@@ -403,9 +397,9 @@ DateTimeZonePicker.propTypes = {
   }),
   //  settings:
   className: PropTypes.string,
+  name: PropTypes.string,
   setDate: PropTypes.bool,
   setFirstDay: PropTypes.string,
-  setName: PropTypes.string,
   setSeconds: PropTypes.bool,
   setMilliseconds: PropTypes.bool,
   setTwentyFour: PropTypes.bool,

@@ -11,10 +11,19 @@ import { formatToTimeZone } from 'date-fns-timezone/dist/formatToTimeZone';
 const isUnique = (value, index, self) => self.indexOf(value) === index;
 
 const getSafeDate = (year, month, day, hour, minute, second, millisecond) => {
-  //  https://stackoverflow.com/questions/5863327/tips-for-working-with-pre-1000-a-d-dates-in-javascript
   const d = new Date(year, month, day, hour, minute, second, millisecond);
   d.setFullYear(year);
   return d;
+};
+
+const hasObjectGotProperty = (object, property) => {
+  let check = false;
+
+  if (Object.prototype.hasOwnProperty.call(object, property)) {
+    check = true;
+  }
+
+  return check;
 };
 
 const getFormattedOffset = (value, index, char) => `${value.substring(0, index)}${char}${value.substring(index)}`;
@@ -54,17 +63,23 @@ const getFormattedDateLabel = (year, month, day) => {
   return label;
 };
 
-const getFormattedTimeLabel = (hour, minute, second, millisecond, showSecond, showMillisecond, showTwentyFour) => {
+const getFormattedTimeLabel = (time, showSecond, showMillisecond, showTwentyFour) => {
+  const {
+    hour,
+    minute,
+    second,
+    millisecond
+  } = time;
   const timeFormat = getTimeFormat(showMillisecond, showSecond, showTwentyFour);
   const date = new Date();
-  const time = date.setHours(hour, minute, second, millisecond);
-  const label = format(time, timeFormat);
+  const newTime = date.setHours(hour, minute, second, millisecond);
+  const label = format(newTime, timeFormat);
   const formattedTime = {
-    hour: Number(format(time, showTwentyFour ? 'H' : 'h')),
+    hour: Number(format(newTime, showTwentyFour ? 'H' : 'h')),
     minute,
     second,
     millisecond,
-    meridiem: format(time, 'a'),
+    meridiem: format(newTime, 'a'),
     label
   };
   return formattedTime;
@@ -201,10 +216,15 @@ const getDateTimeZoneAsOutputObject = (setDate, setTime, setZone, pickerDate, pi
   const safeDate = getSafeDate(myDateTime.date.year, myDateTime.date.month, myDateTime.date.day, myDateTime.time.hour, myDateTime.time.minute, myDateTime.time.second, myDateTime.time.millisecond);
   const data = getDateTimeZoneObject(setDate, setTime, setZone, pickerDate, pickerTime, pickerZone, doSecond, doMillisecond, doTwentyFour);
 
-  if (setZone) {
+  if (setDate === false && setTime === false && setZone) {
+    customValue = pickerZone;
+  } else if (setZone) {
+    //  if (setZone) {
     customValue = setTimeToTimeZone(safeDate, customFormat, {
       timeZone: pickerZone
-    });
+    }); //  } else {
+    //    customValue = format(safeDate, customFormat);
+    //  }
   } else {
     customValue = format(safeDate, customFormat);
   }
@@ -215,4 +235,4 @@ const getDateTimeZoneAsOutputObject = (setDate, setTime, setZone, pickerDate, pi
   };
 };
 
-export { getAllDaysBetween, getDateFormat, getDateTimeZoneAsOutputObject, getDayOfMonthFromDate, getFormattedDateLabel, getFormattedMonthNumber, getFormattedOffset, getFormattedTimeLabel, getISODayOfWeek, getLastDayOfMonth, getMonthFromDate, getSafeDate, getTimeFormat, getYearFromDate, getZoneFormat, isUnique, setTimeToTimeZone, replaceAllCharacters, roundDownToNearestFive };
+export { getAllDaysBetween, getDateFormat, getDateTimeZoneAsOutputObject, getDayOfMonthFromDate, getFormattedDateLabel, getFormattedMonthNumber, getFormattedOffset, getFormattedTimeLabel, getISODayOfWeek, getLastDayOfMonth, getMonthFromDate, getSafeDate, getTimeFormat, getYearFromDate, getZoneFormat, hasObjectGotProperty, isUnique, setTimeToTimeZone, replaceAllCharacters, roundDownToNearestFive };
