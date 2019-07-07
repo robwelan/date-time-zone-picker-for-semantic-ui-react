@@ -11,7 +11,6 @@ import { formatToTimeZone } from 'date-fns-timezone/dist/formatToTimeZone';
 const isUnique = (value, index, self) => self.indexOf(value) === index;
 
 const getSafeDate = (year, month, day, hour, minute, second, millisecond) => {
-  //  https://stackoverflow.com/questions/5863327/tips-for-working-with-pre-1000-a-d-dates-in-javascript
   const d = new Date(year, month, day, hour, minute, second, millisecond);
   d.setFullYear(year);
 
@@ -333,10 +332,16 @@ const getDateTimeZoneAsOutputObject = (
     doTwentyFour,
   );
 
-  if (setZone) {
+  if (setDate === false && setTime === false && setZone) {
+    customValue = pickerZone;
+  } else if (setZone) {
+  //  if (setZone) {
     customValue = setTimeToTimeZone(safeDate, customFormat, {
       timeZone: pickerZone,
     });
+  //  } else {
+  //    customValue = format(safeDate, customFormat);
+  //  }
   } else {
     customValue = format(safeDate, customFormat);
   }
