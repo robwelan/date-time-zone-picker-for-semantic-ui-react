@@ -2,9 +2,7 @@
 
 ## Status
 
-Coming Soon: dedicated documentation page.
-
-In Progress.
+[Click here for documentation.](https://pick-dtz.creatureoftech.com/)
 
 This is a side project and a labour of love at that.
 
